@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0d0d0d;
+    background-color: #120c1f;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(18, 12, 28, 0.5);
 }
 
 #bg-video {
@@ -43,7 +43,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(18, 12, 28, 0.45);
     z-index: -1;
 }
 
@@ -55,10 +55,10 @@ body {
 }
 
 .glass-card {
-    background: rgba(15, 15, 15, 0.5);
+    background: rgba(28, 20, 42, 0.55);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 51, 51, 0.15);
+    border: 1px solid rgba(216, 180, 254, 0.25);
     border-radius: 16px;
     padding: 40px;
     text-align: center;
@@ -66,49 +66,49 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(10, 5, 20, 0.6), 0 0 20px rgba(192, 132, 252, 0.15);
 }
 
 .profile-image {
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    border: 2px solid #ff3333;
+    border: 2px solid #c084fc;
     object-fit: cover;
-    box-shadow: 0 0 20px rgba(255, 51, 51, 0.4);
+    box-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
 }
 
 .username {
-    color: #ff3333;
+    color: #e879f9;
     font-size: 26px;
     letter-spacing: 1px;
 }
 
 h2 {
     font-size: 16px;
-    color: #ff3333;
+    color: #c084fc;
     margin-bottom: 8px;
 }
 
 p {
     font-size: 14px;
-    color: #bbbbbb;
+    color: #e2d8f0;
     line-height: 1.6;
 }
 
 .info-section {
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(18, 12, 28, 0.5);
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(216, 180, 254, 0.15);
 }
 
 .action-button {
     display: inline-block;
     margin-top: 16px;
     padding: 12px 30px;
-    background-color: #ff3333;
+    background-color: #c084fc;
     color: #ffffff;
     text-decoration: none;
     border-radius: 6px;
@@ -118,8 +118,8 @@ p {
 }
 
 .action-button:hover {
-    background-color: #e60000;
-    box-shadow: 0 0 15px rgba(255, 51, 51, 0.6);
+    background-color: #a855f7;
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.6);
 }
 
 .legal-links {
@@ -130,23 +130,23 @@ p {
 }
 
 .legal-links a {
-    color: #777777;
+    color: #a799be;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .legal-links a:hover {
-    color: #ff3333;
+    color: #e879f9;
 }
 
 .audio-widget {
     position: fixed;
     top: 20px;
     left: 20px;
-    background: rgba(30, 30, 30, 0.7);
+    background: rgba(35, 25, 50, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(216, 180, 254, 0.2);
     border-radius: 16px;
     padding: 12px 16px;
     display: flex;
@@ -154,6 +154,7 @@ p {
     gap: 12px;
     z-index: 100;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
 }
 
 .icon-btn {
@@ -169,7 +170,7 @@ p {
 }
 
 .icon-btn:hover {
-    color: #ff3333;
+    color: #e879f9;
 }
 
 .icon-btn svg {
@@ -181,12 +182,21 @@ p {
 .volume-slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 80px;
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
     height: 6px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(216, 180, 254, 0.3);
     border-radius: 10px;
     outline: none;
     cursor: pointer;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.audio-widget:hover .volume-slider {
+    width: 80px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -194,7 +204,7 @@ p {
     appearance: none;
     width: 14px;
     height: 14px;
-    background: #ffffff;
+    background: #e879f9;
     border-radius: 50%;
     transition: transform 0.1s ease;
 }
@@ -209,7 +219,7 @@ p {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(13, 13, 13, 1);
+    background: rgba(18, 12, 28, 1);
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -225,21 +235,4 @@ p {
 .enter-screen.hidden {
     opacity: 0;
     pointer-events: none;
-}
-
-.audio-widget {
-    transition: all 0.3s ease;
-}
-
-.volume-slider {
-    width: 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: width 0.3s ease, opacity 0.3s ease;
-}
-
-.audio-widget:hover .volume-slider {
-    width: 80px;
-    opacity: 1;
-    pointer-events: auto;
 }
